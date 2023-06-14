@@ -1,0 +1,104 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-6 {
+  flex-basis: 50%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #ccc;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #777;
+}
+
+.m-1 {
+  margin: 5px;
+}
+.letreiro-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.letreiro-title {
+  font-size: 24px;
+  color: #e90707;
+}
+
+.letreiro-text {
+  font-size: 36px;
+  color: #070000;
+  margin-top: 10px;
+}
+.relogio {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2804f7;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  border: 2px solid #0a0000;
+  border-radius: 5px;
+  background-color: #97da1b;
+}.img {
+	display: inline-block;
+	width: 100px;
+  }
+  
+  .buttons-container {
+	display: inline-block;
+	text-align: center;
+	margin-left: 5%;
+  }
+
+  .botao{
+	margin-right: 10px;
+	width: auto;
+	padding: 10px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .buttons-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .refresh-button {
+    margin-top: 20px;
+  }
+  
+
+
