@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { sculptureList } from "./data.js";
-import voltar from "../voltar";
+import voltar from "../voltar.js";
 
 export default function Gallery() {
   const [index, setIndex] = useState(0);
@@ -34,21 +34,3 @@ export default function Gallery() {
     </>
   );
 }
-
-// function useTime() {
-//     const [time, setTime] = useState(new Date());
-//     useEffect(() => {
-//         const id = setInterval(() => {
-//             setTime(new Date());
-//         }, 1000);
-//         return () => clearInterval(id);
-//     }, []);
-//     return time;
-// }
-
-// export default function GalleryTime() {
-//     const time = useTime();
-//     return (
-//         <Clock time={time.toLocaleTimeString()} />
-//     );
-// }

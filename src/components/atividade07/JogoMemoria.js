@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import voltar from "../voltar";
-import minions from "./imagens/minions.gif";
+import ganhou from "./imagens/ganhou.webp";
+import dog1 from "./imagens/dog1.png";
+import dog2 from "./imagens/dog2.png";
+import dog3 from "./imagens/dog3.png";
+import dog4 from "./imagens/dog4.png";
+import dog5 from "./imagens/dog5.png";
+import dog6 from "./imagens/dog6.png";
 
-function embaralhar(animes) {
+
+function Embaralhar(animes) {
   let indiceAtual = animes.length,
     valorTemporario,
     indiceAleatorio;
@@ -19,7 +26,7 @@ function embaralhar(animes) {
 function Card({ anime, funcao }) {
   return (
     <div className="col-2 d-flex justify-content-center">
-      <button
+      <a
         className="card"
         onClick={() => funcao(anime)}
         style={{
@@ -27,6 +34,8 @@ function Card({ anime, funcao }) {
           height: "100px",
           fontSize: "24px",
           color: "black",
+          backgroundImage: anime.virado ? `url(${anime.img})` : "",
+          backgroundPosition: "center",
           backgroundColor: anime.acertou
             ? "#a6d3a6"
             : anime.virado
@@ -39,29 +48,30 @@ function Card({ anime, funcao }) {
           justifyContent: "center",
           alignItems: "center",
         }}
-      >
-        {anime.virado ? anime.img : "❀"}
-      </button>
+      ></a>
     </div>
   );
 }
+
+
 const ArrayAnimes = [
-  { id: 0, nome: "rosa", img: "🌹", acertou: false, virado: false },
-  { id: 1, nome: "rosa", img: "🌹", acertou: false, virado: false },
-  { id: 2, nome: "florescencia", img: "🌼", acertou: false, virado: false },
-  { id: 3, nome: "florescencia", img: "🌼", acertou: false, virado: false },
-  { id: 4, nome: "rosette", img: "🏵️", acertou: false, virado: false },
-  { id: 5, nome: "rosette", img: "🏵️", acertou: false, virado: false },
-  { id: 6, nome: "rosaMurcha", img: "🥀", acertou: false, virado: false },
-  { id: 7, nome: "rosaMurcha", img: "🥀", acertou: false, virado: false },
-  { id: 8, nome: "tulipa", img: "🌷", acertou: false, virado: false },
-  { id: 9, nome: "tulipa", img: "🌷", acertou: false, virado: false },
-  { id: 10, nome: "trevo", img: "🍀", acertou: false, virado: false },
-  { id: 11, nome: "trevo", img: "🍀", acertou: false, virado: false },
+  { id: 0, nome: "dog1", img: dog1, acertou: false, virado: false },
+  { id: 1, nome: "dog1", img: dog1, acertou: false, virado: false },
+  { id: 2, nome: "dog2", img: dog2, acertou: false, virado: false },
+  { id: 3, nome: "dog2", img: dog2, acertou: false, virado: false },
+  { id: 4, nome: "dog3", img: dog3, acertou: false, virado: false },
+  { id: 5, nome: "dog3", img: dog3, acertou: false, virado: false },
+  { id: 6, nome: "dog4", img: dog4, acertou: false, virado: false },
+  { id: 7, nome: "dog4", img: dog4, acertou: false, virado: false },
+  { id: 8, nome: "dog5", img: dog5, acertou: false, virado: false },
+  { id: 9, nome: "dog5", img: dog5, acertou: false, virado: false },
+  { id: 10, nome: "dog6", img: dog6, acertou: false, virado: false },
+  { id: 11, nome: "dog6", img: dog6, acertou: false, virado: false },
 ];
+
 export default function JogoMemoria() {
   const [acertos, setAcertos] = useState(0);
-  const [animes, setAnimes] = useState(embaralhar(ArrayAnimes));
+  const [animes, setAnimes] = useState(Embaralhar(ArrayAnimes));
   const [anterior, setAnterior] = useState(null);
 
   function handleClick(anime) {
@@ -114,9 +124,13 @@ export default function JogoMemoria() {
           </div>
           <div className="col-12 text-center">
             {acertos === 6 && (
-              <img src={minions} style={{ width: "500px" }} alt="" />
+              <>
+                <h2>Parabéns, você ganhou!!!</h2>
+                <img src={ganhou} style={{ width: "500px" }} alt="" />
+              </>
             )}
           </div>
+
         </div>
         <div className="row">
           {animes.map((anime) => (
